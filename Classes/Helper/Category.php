@@ -31,46 +31,6 @@ namespace Tx\Dam\Helper;
 class Category
 {
     /**
-     * gives the uid of a fal-category for a given dam-category uid
-     *
-     * @param integer $damUid uid of a dam-category
-     *
-     * @return integer uid of the mapped fal-category
-     */
-    public static function getMappedCategoryUid($damUid)
-    {
-        /* @var $db \TYPO3\CMS\Core\Database\DatabaseConnection */
-        $db = $GLOBALS['TYPO3_DB'];
-        $cat = $db->exec_SELECTgetSingleRow(
-            'uid',
-            'sys_category',
-            '_migrateddamcatuid = ' . $damUid
-        );
-        $catUid = $cat['uid'];
-        return $catUid;
-    }
-
-    /**
-     * gives the uid of a dam-category for a given fal-category uid
-     *
-     * @param integer $falUid uid of a fal-category
-     *
-     * @return integer uid of the mapped dam-category
-     */
-    public static function getOldCategoryUid($falUid)
-    {
-        /* @var $db \TYPO3\CMS\Core\Database\DatabaseConnection */
-        $db = $GLOBALS['TYPO3_DB'];
-        $cat = $db->exec_SELECTgetSingleRow(
-            '_migrateddamcatuid',
-            'sys_category',
-            'uid = ' . $falUid
-        );
-        $catUid = $cat['_migrateddamcatuid'];
-        return $catUid;
-    }
-
-    /**
      * fetches the uid from category-name
      *
      * @param string $name category-name
