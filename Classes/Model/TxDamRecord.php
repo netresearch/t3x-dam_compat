@@ -164,6 +164,7 @@ class TxDamRecord extends \ArrayObject
         $properties['file_size'] = $properties['size'];
         $properties['hpixels'] = $properties['width'];
         $properties['vpixels'] = $properties['height'];
+        $properties['alt_text'] = $properties['alternative'];
 
         return $properties;
     }
