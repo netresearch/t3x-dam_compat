@@ -27,3 +27,8 @@ require_once(PATH_txdam.'tca_media_field.php');
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass'][] = 'Tx\\Dam\\Hook\\FlexFormDataStructure';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['GLOBAL']['extTablesInclusion-PostProcessing'][] = 'Tx\\Dam\\Hook\\ExtensionTables';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['includeStaticTypoScriptSources'][] = 'Tx\\Dam\\Hook\\TsTemplate->includeStatic';
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['getData'][] = 'Tx\\Dam\\Hook\\ContentObjectGetData';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap'][] = 'Tx\\Dam\\Hook\\ContentObjectStdWrap';
+
+?>
