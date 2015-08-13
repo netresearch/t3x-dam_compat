@@ -71,7 +71,7 @@ class tx_dam
             '\TYPO3\CMS\Core\Resource\ResourceFactory'
         );
         $file = $factory->getFileObjectFromCombinedIdentifier($fileInfo);
-        return $file->getMetaData();
+        return $file->_getMetaData();
     }
   
     /**
