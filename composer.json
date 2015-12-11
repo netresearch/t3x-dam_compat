@@ -1,7 +1,7 @@
 {
     "name": "netresearch/dam_compat",
     "type": "typo3-cms-extension",
-    "description": "Extension to build and deploy TYPO3 installations - inspired by TYPO3.Surf",
+    "description": "Extension for TYPO3 6.2+ which provides important DAM API methods as Facades utilizing the FAL.",
     "homepage": "http://www.netresearch.de/",
     "authors": [
         {
@@ -10,15 +10,10 @@
         }
 
     ],
-    "support": {
-        "issues": "https://github.com/netresearch/t3x-smurf/issues"
-    },
     "require": {
-        "typo3/cms-core": "6.2.*"
+        "typo3/cms-core": "6.2.*",
     },
     "replace": {
         "typo3-ter/dam": "*"
     }
 }
-
-
