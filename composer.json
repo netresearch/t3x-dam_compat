@@ -1,5 +1,5 @@
 {
-    "name": "netresearch/dam_compat",
+    "name": "netresearch/dam-compat",
     "version": "1.3.3",
     "type": "typo3-cms-extension",
     "description": "Extension for TYPO3 6.2+ which provides important DAM API methods as Facades utilizing the FAL.",
@@ -9,7 +9,6 @@
             "name": "Christian Opitz",
             "email": "christian.opitz@netresearch.de"
         }
-
     ],
     "require": {
         "typo3/cms-core": "6.2.*",
