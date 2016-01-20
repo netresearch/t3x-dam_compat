@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "typo3/cms-core": ">6.2"
+        "typo3/cms-core": ">6.2",
+        "php": ">=5.5"
     },
     "replace": {
         "dam": "*"

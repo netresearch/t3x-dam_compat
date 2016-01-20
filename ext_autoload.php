@@ -13,7 +13,7 @@ declare(encoding = 'UTF-8');
  * @link     http://www.netresearch.de
  */
 
-$extPath = t3lib_extMgm::extPath('dam');
+$extPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('dam');
 $paths = array();
 foreach (array(
     'tx_dam_db',
