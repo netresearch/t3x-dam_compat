@@ -1,5 +1,4 @@
 <?php
-declare (encoding = 'UTF-8');
 /**
  * DAM index_rule_devel replace
  *
