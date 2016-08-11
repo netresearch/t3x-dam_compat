@@ -51,5 +51,14 @@ extension manager automatically deactivated dam and dependent extensions because
 is only compatible until 4.7 - just reactivate those extensions after you replaced
 dam.
 
+
+XClass ContentObjectRenderer
+============================
+
+Due to media files handled as referenced since TYPO3 6.X. It was necessary to
+implement a XClass for the content object renderer to force treatIdAsReference if
+the tx_dam_tfse or tx_damtvc_tfse method fetchFileList() is used. Because the methods
+returns reference IDs not file IDs.
+
 .. _TER: http://typo3.org/extensions/repository/view/dam_compat
 .. _github: https://github.com/netresearch/t3x-dam_compat

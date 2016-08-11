@@ -31,4 +31,13 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['i
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['getData'][] = 'Tx\\Dam\\Hook\\ContentObjectGetData';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap'][] = 'Tx\\Dam\\Hook\\ContentObjectStdWrap';
 
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer'] = array(
+    'className' => 'Tx\\Dam\\Xclass\\ContentObjectRenderer'
+);
+
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tslib_cObj'] = array(
+    'className' => 'Tx\\Dam\\Xclass\\ContentObjectRenderer'
+);
+
 ?>
