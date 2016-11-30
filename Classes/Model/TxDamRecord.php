@@ -153,10 +153,12 @@ class TxDamRecord extends \ArrayObject
     protected function mapProperties($properties)
     {
         $type = explode('/', $properties['mime_type']);
-        $path = $this->file->getPublicUrl();
-        $properties['file_hash'] = $this->file->getSha1();
-        $properties['file_name'] = basename($path);
-        $properties['file_path'] = dirname(trim($path, '/')) . '/';
+        if ($this->file->getStorage()->hasFile($this->file->getIdentifier())) {
+            $path = $this->file->getPublicUrl();
+            $properties['file_hash'] = $this->file->getSha1();
+            $properties['file_name'] = basename($path);
+            $properties['file_path'] = dirname(trim($path, '/')) . '/';
+        }
         $properties['file_mime_type'] = $type[0];
         $properties['file_mime_subtype'] = $type[1];
         $properties['file_type'] = $this->file->getExtension();
