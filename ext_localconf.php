@@ -4,18 +4,14 @@ if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
 
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility
-    as ExtensionManagementUtility;
-
-
 if (!defined('PATH_txdam')) {
-    define('PATH_txdam', ExtensionManagementUtility::extPath($_EXTKEY));
+    define('PATH_txdam', \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY));
 }
 if (!defined('PATH_txdam_rel')) {
-    define('PATH_txdam_rel', ExtensionManagementUtility::extRelPath($_EXTKEY));
+    define('PATH_txdam_rel', \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY));
 }
 if (!defined('PATH_txdam_siteRel')) {
-    define('PATH_txdam_siteRel', ExtensionManagementUtility::siteRelPath($_EXTKEY));
+    define('PATH_txdam_siteRel', \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($_EXTKEY));
 }
 
 if (!defined('DAM_COMPAT')) {
@@ -43,11 +39,11 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tslib_cObj'] = array(
     'className' => 'Tx\\Dam\\Xclass\\ContentObjectRenderer'
 );
 
-$bTtNewsLoaded = ExtensionManagementUtility::isLoaded('tt_news');
+$bTtNewsLoaded = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('tt_news');
 
 if ($bTtNewsLoaded) {
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$_EXTKEY] = 'tx_damttnews';
-    require_once ExtensionManagementUtility::extPath(
+    require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath(
         $_EXTKEY, 'lib/class.tx_damttnews.php'
     );
 }

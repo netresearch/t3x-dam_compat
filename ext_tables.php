@@ -2,10 +2,7 @@
 
 if (!defined('TYPO3_MODE')) die ('Access denied.');
 
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility
-    as ExtensionManagementUtility;
-
-if (ExtensionManagementUtility::isLoaded('tt_news')) {
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('tt_news')) {
     $strLanguageFile = 'LLL:EXT:dam/Resources/Private/Language/locallang_db.xml';
 
     $ttNewsExtConf = unserialize(
@@ -34,23 +31,23 @@ if (ExtensionManagementUtility::isLoaded('tt_news')) {
 
     if ($damTtNewsExtConf['media_add_ref']) {
         if ($damTtNewsExtConf['media_add_orig_field']) {
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_images', '0', 'after:image'
             );
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_images', '1', 'after:image'
             );
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_images', '2', 'after:image'
             );
 
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_media', '0', 'after:news_files'
             );
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_media', '1', 'after:news_files'
             );
-            ExtensionManagementUtility::addToAllTCAtypes(
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_news', 'tx_damnews_dam_media', '2', 'after:news_files'
             );
 
