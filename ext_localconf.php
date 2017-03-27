@@ -38,14 +38,4 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Frontend\\ContentObje
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tslib_cObj'] = array(
     'className' => 'Tx\\Dam\\Xclass\\ContentObjectRenderer'
 );
-
-$bTtNewsLoaded = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('tt_news');
-
-if ($bTtNewsLoaded) {
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$_EXTKEY] = 'tx_damttnews';
-    require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath(
-        $_EXTKEY, 'lib/class.tx_damttnews.php'
-    );
-}
-
 ?>

@@ -5,7 +5,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'category' => 'services',
 	'shy' => 0,
 	'version' => '1.3.3', // Latest DAM version
-	'dependencies' => '',
+	'dependencies' => 'tt_news',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
@@ -28,11 +28,9 @@ $EM_CONF[$_EXTKEY] = array(
 		'conflicts' => array(
 		),
 		'suggests' => array(
-		    'tt_news' => '',
 		),
 	),
     'suggests' => array(
-        'tt_news' => '',
     ),
 );
 ?>
