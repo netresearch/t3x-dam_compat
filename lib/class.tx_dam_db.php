@@ -90,7 +90,7 @@ class tx_dam_db
             /* @var $damFile \Tx\Dam\Model\TxDamRecord */
             $damFile = \TYPO3\CMS\Core\Utility\GeneralUtility
                 ::makeInstance('\Tx\Dam\Model\TxDamRecord', $file);
-            $paths[$file->getUid()] = $file->getPublicUrl();
+            $paths[$file->getUid()] = urldecode($file->getPublicUrl());
             $rows[$file->getUid()] = $damFile->getArrayCopy();
 
             $limit--;
