@@ -6,17 +6,3 @@ tt_content.image.20 {
     imgList.cObject.userFunc = tx_dam_tsfe->fetchFileList
     imgList.cObject.refField = image
 }
-
-plugin.tt_news.newsFiles {
-    labelStdWrap.cObject = TEXT
-    labelStdWrap.cObject.field = title
-}
-
-plugin.dam_ttnews.mode =  {$plugin.dam_ttnews.mode}
-
-
-includeLibs.imageMarkerFunc=EXT:dam/imageMarkerFunc.php
-plugin.tt_news.imageMarkerFunc = user_imageMarkerFunc
-
-includeLibs.displayFileLinks = EXT:dam/displayFileLinks.php
-plugin.tt_news.itemMarkerArrayFunc = user_displayFileLinks
