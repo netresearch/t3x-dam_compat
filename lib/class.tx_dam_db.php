@@ -79,19 +79,26 @@ class tx_dam_db
             $MM_ident,
             (int) $foreign_uid
         );
-        foreach ($fileRefs as $ref) {
-            $files[] = $ref->getOriginalFile();
-        }
         $paths = array();
         $rows = array();
-
-        /* @var $file \TYPO3\CMS\Core\Resource\FileReference */
-        foreach ($files as $file) {
+        /* @var $ref TYPO3\CMS\Core\Resource\FileReference */
+        foreach ($fileRefs as $ref) {
+            $file = $ref->getOriginalFile();
+            $strAltTitle = $ref->getTitle();
+            $strAltDesc = $ref->getDescription();
             /* @var $damFile \Tx\Dam\Model\TxDamRecord */
             $damFile = \TYPO3\CMS\Core\Utility\GeneralUtility
                 ::makeInstance('\Tx\Dam\Model\TxDamRecord', $file);
             $paths[$file->getUid()] = rawurldecode($file->getPublicUrl());
             $rows[$file->getUid()] = $damFile->getArrayCopy();
+
+            if (isset($strAltTitle)) {
+                $rows[$file->getUid()]['title'] = $strAltTitle;
+            }
+
+            if (isset($strAltDesc)) {
+                $rows[$file->getUid()]['description'] = $strAltDesc;
+            }
 
             $limit--;
             if ($limit == 0) {
