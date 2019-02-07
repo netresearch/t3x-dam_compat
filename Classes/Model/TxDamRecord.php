@@ -39,9 +39,9 @@ class TxDamRecord extends \ArrayObject
 
     /**
      * constructor needs a file-object, an uid or an array
-     * 
+     *
      * @param mixed $file file-object, uid or row as array
-     * 
+     *
      * @return void
      */
     public function __construct($file)
@@ -96,9 +96,9 @@ class TxDamRecord extends \ArrayObject
     /**
      * Returns whether the requested index exists
      *
-     * @param type $index The index being checked
+     * @param mixed $index The index being checked
      *
-     * @return void
+     * @return bool
      */
     public function offsetExists($index)
     {
@@ -154,7 +154,9 @@ class TxDamRecord extends \ArrayObject
     {
         $type = explode('/', $properties['mime_type']);
         $path = $this->file->getPublicUrl();
-        $properties['file_hash'] = $this->file->getSha1();
+        if (false === $this->file->isMissing()) {
+            $properties['file_hash'] = $this->file->getSha1();
+        }
         $properties['file_name'] = basename($path);
         $properties['file_path'] = dirname(trim($path, '/')) . '/';
         $properties['file_mime_type'] = $type[0];
